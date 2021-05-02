@@ -12,15 +12,17 @@ def main():
     parser = argparse.ArgumentParser(description='Flower Image Classifier')
     parser.add_argument('image_path', action='store', type=str, help='Enter the image path:')
     parser.add_argument('saved_model', action='store', type=str, help='Enter the name of the model:')
-    parser.add_argument('top_k', action='store', type=str, help='Enter k:')
+    parser.add_argument('--top_k', default = 3, action='store', type=str, help='Enter k:')
+    parser.add_argument('--category_names', default = 'label_map.json', type = str, help = 'Enter the mapping of categories to the numerical labels as a JSON file:')
     args = parser.parse_args()
     print(args)
     input_image_path = args.image_path
     model = args.saved_model
     top_k = args.top_k
+    class_map_file = args.category_names
     loaded_model = tf.keras.models.load_model(model, custom_objects={'KerasLayer':hub.KerasLayer}, compile=False)
     probs, labels = predict(input_image_path, loaded_model, top_k)
-    class_names = get_class_names()
+    class_names = get_class_names(class_map_file)
     print('Top', top_k, 'predictions for given image')
     for i in range(int(top_k)):
         print('Class name: ',class_names.get(str(labels[i])).capitalize(),

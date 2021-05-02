@@ -3,8 +3,8 @@ import json
 
 import tensorflow as tf
 
-def get_class_names():
-    with open('label_map.json', 'r') as f:
+def get_class_names(class_map_file):
+    with open(class_map_file, 'r') as f:
         class_names = json.load(f)
     return class_names
     
