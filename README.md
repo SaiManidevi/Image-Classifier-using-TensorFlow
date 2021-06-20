@@ -1,11 +1,28 @@
 # Intro to Machine Learning - TensorFlow Project
+## Table of contents
+* [Project Introduction](#project-Introduction)
+* [Language & Libraries used](#programming-Language-and-Libraries-used)
+* [Contents](#contents)
 
-Project code for Udacity's Intro to Machine Learning with TensorFlow Nanodegree program. In this project, you will first develop code for an image classifier built with TensorFlow, then you will convert it into a command line application.
+## Project Introduction
+Using the Oxford 102 Category Flower Dataset, built an Image Classifier that predicts and recognizes different species of flowers. The project is broken down into multiple steps:
 
-In order to complete this project, you will need to use the GPU enabled workspaces within the classroom.  The files are all available here for your convenience, but running on your local CPU will likely not work well.
+* Loading the image dataset and creating a pipeline.
+* Building and Training an image classifier on this dataset.
+* Using the trained model to perform inference on flower images.
 
-You should also only enable the GPU when you need it. If you are not using the GPU, please disable it so you do not run out of time!
+## Programming Language and Libraries used: 
+This project uses **Python 3** and is designed to be completed through the **Jupyter Notebooks IDE.**
 
-### Data
+The following libraries were used in this project:
+* NumPy
+* Pandas
+* Matplotlib (for data visualization)
+* Tensorflow
+* Tensorflow Hub
 
-The data for this project is quite large - in fact, it is so large you cannot upload it onto Github.  If you would like the data for this project, you will want download it from the workspace in the classroom.  Though actually completing the project is likely not possible on your local unless you have a GPU.  You will be training using 102 different types of flowers, where there ~20 images per flower to train on.  Then you will use your trained classifier to see if you can predict the type for new images of the flowers.
+## Contents:
+* Project_Image_Classifier_Project_colab_2.ipynb: Jupyter notebook with all the steps showcasing how the model is created/trained/tested.
+* report.html: HTML version of the jupyter notebook
+* my_saved_model.h5: Classifier model
+* /part_2/predict.py: Python application that uses our classifier model to predict flower type
